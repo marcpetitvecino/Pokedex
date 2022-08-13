@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_ghost_type.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.28804347826086957" />
-        <entry key="app/src/main/res/layout/fragment_pokemon_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_pokemon_detail.xml" value="0.45" />
         <entry key="app/src/main/res/layout/fragment_pokemon_list.xml" value="0.13072916666666667" />
         <entry key="app/src/main/res/layout/pokemon_list_item.xml" value="0.25" />
       </map>

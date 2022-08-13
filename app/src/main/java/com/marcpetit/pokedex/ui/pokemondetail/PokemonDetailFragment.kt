@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import com.marcpetit.pokedex.common.BaseFragment
 import com.marcpetit.pokedex.common.visible
@@ -56,7 +57,28 @@ class PokemonDetailFragment : BaseFragment<FragmentPokemonDetailBinding>() {
         with(binding) {
             Picasso.get().load(pokemon.sprites?.frontDefault).into(pokemonImage)
             pokemonName.text = "#${pokemon.id.toString().padStart(3, '0')} | ${pokemon.name}"
-            pokemonTypes.text = pokemon.types[0].type?.name
+            context?.let {
+                with(pokemon.types) {
+                    pokemonType1.setImageDrawable(
+                        ContextCompat.getDrawable(
+                            it,
+                            viewModel.getTypeDrawable(get(0).type?.name ?: "")
+                        )
+                    )
+                    pokemonType1.contentDescription = get(0).type?.name
+                    if (size > 1) {
+                        pokemonType2.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                it,
+                                viewModel.getTypeDrawable(get(1).type?.name ?: "")
+                            )
+                        )
+                        pokemonType2.contentDescription = get(1).type?.name
+                    } else {
+                        pokemonType2.visible(false)
+                    }
+                }
+            }
         }
     }
 

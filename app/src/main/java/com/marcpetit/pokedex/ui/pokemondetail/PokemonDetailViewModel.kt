@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.marcpetit.pokedex.R
 import com.marcpetit.pokedex.domainmodel.Pokemon
 import com.marcpetit.pokedex.network.PokemonRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -44,6 +45,30 @@ class PokemonDetailViewModel @Inject constructor(private val pokemonRepository: 
                 mutableViewState.postValue(PokemonDetailViewState.Error)
                 Log.e("PokemonDetailViewModel", e.message.toString())
             }
+        }
+    }
+
+    fun getTypeDrawable(type: String): Int {
+        return when (type) {
+            "bug" -> R.drawable.ic_bug_type
+            "dark" -> R.drawable.ic_dark_type
+            "dragon" -> R.drawable.ic_dragon_type
+            "electric" -> R.drawable.ic_electric_type
+            "fairy" -> R.drawable.ic_fairy_type
+            "fighting" -> R.drawable.ic_fighting_type
+            "fire" -> R.drawable.ic_fire_type
+            "flying" -> R.drawable.ic_flying_type
+            "ghost" -> R.drawable.ic_ghost_type
+            "grass" -> R.drawable.ic_grass_type
+            "ground" -> R.drawable.ic_ground_type
+            "ice" -> R.drawable.ic_ice_type
+            "normal" -> R.drawable.ic_normal_type
+            "poison" -> R.drawable.ic_poison_type
+            "psychic" -> R.drawable.ic_psychic_type
+            "rock" -> R.drawable.ic_rock_type
+            "steel" -> R.drawable.ic_steel_type
+            "water" -> R.drawable.ic_water_type
+            else -> R.drawable.ic_normal_type
         }
     }
 }

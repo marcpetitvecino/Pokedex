@@ -49,15 +49,31 @@
             android:layout_marginTop="@dimen/normal_space"
             tools:text="#001 | Bulbasaur" />
 
-        <TextView
-            android:id="@+id/pokemon_types"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/pokemon_type_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/small_space"
+            android:layout_marginEnd="@dimen/small_space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pokemon_type_2"
+            app:layout_constraintStart_toStartOf="@+id/pokemon_name"
             app:layout_constraintTop_toBottomOf="@id/pokemon_name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Grass"
-            />
+            android:layout_marginBottom="@dimen/normal_space"
+            tools:src="@drawable/ic_bug_type" />
+
+        <ImageView
+            android:id="@+id/pokemon_type_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/small_space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/pokemon_name"
+            app:layout_constraintStart_toEndOf="@id/pokemon_type_1"
+            app:layout_constraintTop_toBottomOf="@id/pokemon_name"
+            android:layout_marginBottom="@dimen/normal_space"
+            tools:src="@drawable/ic_dragon_type" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
